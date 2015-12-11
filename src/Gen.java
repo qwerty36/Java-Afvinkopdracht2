@@ -99,11 +99,17 @@ private String locus;
             }
             if (i==0)
             {
-                f1 = Integer.parseInt(first);
+                try {f1 = Integer.parseInt(first);}
+                catch (NumberFormatException nfe){
+                    f1 = Integer.parseInt(first.substring(0,first.length()-1));
+                }
             }
             else
             {
-                f2 = Integer.parseInt(first);
+                try {f2 = Integer.parseInt(first);}
+                catch (NumberFormatException nfe){
+                    f1 = Integer.parseInt(first.substring(0,first.length()-1));
+                }
             }
         }
 

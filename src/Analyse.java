@@ -10,7 +10,7 @@ import java.util.List;
 public class Analyse
 {
     private String inhoud;
-    private String file = "/home/richard/Documents/Lysanne/Homo_sapiens.gene_info";
+    private String file = "/home/richard/Documents/Homo_sapiens.gene_info";
     private static BufferedReader readloop;
     private List<Gen> arl = new ArrayList<>();
 
