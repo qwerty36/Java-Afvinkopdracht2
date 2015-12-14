@@ -21,8 +21,10 @@ public class Analyse
     }
 
     public void check()
-    {                                               //objecten hebben als private attribuut gene_id, symbol en chromosome_map_location.
-                                                    //Creëer ook de bijbehorende getters en setters voor deze attributen
+    {
+        //objecten hebben als private attribuut gene_id, symbol en chromosome_map_location.
+        long etime;
+        long etime2;                                            //Creëer ook de bijbehorende getters en setters voor deze attributen
 
         try
         {
@@ -37,15 +39,16 @@ public class Analyse
                     String gene_id = arr1[1];
                     String symbol = arr1[2];
                     String locus = arr1[7];
-                    //System.out.println("\ngene_id:    "+gene_id);
-                    //System.out.println("symbol:     "+symbol);
-                    //System.out.println("locus:      "+locus);
                     String[] arr2 = new String[3];
                     arr2[0] = gene_id;
                     arr2[1] = symbol;
                     arr2[2] = locus;
-
+                    etime = System.nanoTime();
                     arl.add(new Gen(arr2));
+                    etime2 = System.nanoTime() - etime;
+                    System.out.printf("Elapsed time: %fs%n", ((double) etime2 / 1000000000.0));
+                    // Inserten in het midden:  O = 1
+                    // Aflezen
                 }
 
             }
@@ -60,6 +63,7 @@ public class Analyse
             System.out.println(arl);
             arl.sort(null);
             System.out.println(arl);
+
         }
     }
 }
