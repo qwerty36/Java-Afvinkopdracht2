@@ -11,22 +11,28 @@ public class RecursiefDNAcheck {
         System.out.println(n);
         Boolean result = meh(n);
         System.out.println(result);
+        if (result == true){
+            System.out.println("THIS IS DNA ERMAGHERRRRDRRRDRDRDRDRRRRRRd!!!");
+        }
+        if (result == false){
+            System.out.println("This aint DNA dawg!!!");
+        }
 
 
 
     }
     public static boolean meh(String n){
         if (n.length()==0) return true;
-        if (n.substring(0, 1) == "a") {
+        if (n.substring(0, 1) .equals("a")) {
             return meh(n.substring(1));
         }
-        if (n.substring(0, 1) == "t") {
+        if (n.substring(0, 1)  .equals("t")) {
             return meh(n.substring(1));
         }
-        if (n.substring(0, 1) == "c") {
+        if (n.substring(0, 1) .equals("c")) {
             return meh(n.substring(1));
         }
-        if (n.substring(0, 1) == "g") {
+        if (n.substring(0, 1) .equals("g")) {
             return meh(n.substring(1));
         }
         else return false;
